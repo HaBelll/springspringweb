@@ -1,4 +1,4 @@
-package domain.posts;
+package com.hajong.springspringweb.domain.posts;
 
 import com.hajong.springspringweb.domain.posts.Posts;
 import com.hajong.springspringweb.domain.posts.PostsRepository;
