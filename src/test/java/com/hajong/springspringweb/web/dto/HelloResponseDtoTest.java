@@ -1,4 +1,4 @@
-package com.hajong.springspringweb.dto;
+package web.dto;
 
 import com.hajong.springspringweb.web.dto.HelloResponseDto;
 import org.junit.Test;

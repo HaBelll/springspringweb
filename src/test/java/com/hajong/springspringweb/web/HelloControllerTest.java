@@ -1,4 +1,4 @@
-package com.hajong.springspringweb;
+package web;
 
 import com.hajong.springspringweb.web.HelloController;
 import org.junit.Test;
