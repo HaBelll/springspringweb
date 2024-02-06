@@ -32,4 +32,10 @@ public class Posts {
         this.content = content;
         this.author = author;
     }
+
+    public void Update(String title, String content) {
+        this.title = title;
+        this.content = content;
+    }
+
 }
