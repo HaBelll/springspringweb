@@ -2,11 +2,14 @@ package com.hajong.springspringweb.web;
 
 import com.hajong.springspringweb.domain.posts.Posts;
 import com.hajong.springspringweb.service.posts.PostsService;
+import com.hajong.springspringweb.web.dto.PostsListResponseDto;
 import com.hajong.springspringweb.web.dto.PostsResponseDto;
 import com.hajong.springspringweb.web.dto.PostsSaveRequestDto;
 import com.hajong.springspringweb.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
@@ -25,8 +28,20 @@ public class PostsApiController {
         return postsService.update(id, requestDto);
     }
 
+    @DeleteMapping("/api/v1/posts/{id}")
+    public Long delete(@PathVariable Long id) {
+        postsService.delete(id);
+        return id;
+    }
+
     @GetMapping("/api/v1/posts/{id}")
     public PostsResponseDto findById (@PathVariable Long id) {
         return postsService.findById(id);
     }
+
+    @GetMapping("/api/v1/posts/list")
+    public List<PostsListResponseDto> findAll() {
+        return postsService.findAllDesc();
+    }
+
 }
