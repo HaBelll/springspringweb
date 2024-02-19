@@ -1,6 +1,8 @@
 package com.hajong.springspringweb.web.dto;
 
 import com.hajong.springspringweb.service.posts.PostsService;
+
+import com.hajong.springspringweb.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,7 +17,7 @@ public class IndexController {
 
     @GetMapping("/")
     public String index(Model model) {
-        model.addAttribute("posts", postsService.findAllDesc());
+        model.addAttribute("posts",postsService.findAllDesc());
         return "index";
     }
 
