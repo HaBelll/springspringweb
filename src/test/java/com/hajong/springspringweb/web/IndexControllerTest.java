@@ -1,4 +1,4 @@
-package com.hajong.springspringweb.domain.posts;
+package com.hajong.springspringweb.web;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,10 +19,9 @@ public class IndexControllerTest {
     @Test
     public void 메인페이지_로딩() {
         //when
-        String body = this.restTemplate.getForObject("/",
-                String.class);
+        String body = this.restTemplate.getForObject("/", String.class);
 
         //then
-        assertThat(body).contains("스프링 부트로 시작하는 웹 서비스");
+        assertThat(body).contains("스프링부트로 시작하는 웹 서비스");
     }
 }
