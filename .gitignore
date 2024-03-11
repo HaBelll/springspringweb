@@ -3,11 +3,8 @@
 .idea
 application-oauth.properties
 
-# build/
-# gradle/wrapper/gradle-wrapper.jar 파일을 포함하도록 수정합니다.
+build/
 !gradle/wrapper/gradle-wrapper.jar
-
-# **/src/main/**/build/와 **/src/test/**/build/ 디렉토리는 제외하지 않습니다.
 !**/src/main/**/build/
 !**/src/test/**/build/
 
