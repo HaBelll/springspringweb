@@ -1,7 +1,5 @@
 package com.hajong.springspringweb.domain.posts;
 
-import com.hajong.springspringweb.domain.posts.Posts;
-import com.hajong.springspringweb.domain.posts.PostsRepository;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,7 +21,6 @@ public class PostsRepositoryTest {
 
     @After
     public void cleanup() {
-
         postsRepository.deleteAll();
     }
 
@@ -36,7 +33,7 @@ public class PostsRepositoryTest {
         postsRepository.save(Posts.builder()
                 .title(title)
                 .content(content)
-                .author("jhjm5658@gmail.com")
+                .author("jojoldu@gmail.com")
                 .build());
 
         //when
@@ -50,25 +47,22 @@ public class PostsRepositoryTest {
 
     @Test
     public void BaseTimeEntity_등록() {
-
         //given
-        LocalDateTime now = LocalDateTime.of(2024,2,6,0,0,0);
+        LocalDateTime now = LocalDateTime.of(2019, 6, 4, 0, 0, 0);
         postsRepository.save(Posts.builder()
                 .title("title")
                 .content("content")
                 .author("author")
                 .build());
-
         //when
         List<Posts> postsList = postsRepository.findAll();
 
         //then
         Posts posts = postsList.get(0);
 
-        System.out.println(">>>>>>>>> createDate="+posts.getCreatedDate()+", modifiedDate="+posts.getModifiedDate());
+        System.out.println(">>>>>>>>> createDate=" + posts.getCreatedDate() + ", modifiedDate=" + posts.getModifiedDate());
 
         assertThat(posts.getCreatedDate()).isAfter(now);
         assertThat(posts.getModifiedDate()).isAfter(now);
     }
-
 }
